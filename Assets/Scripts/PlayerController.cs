@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Score: " + count.ToString() + " / " + amountOfPickups.ToString();
         if (count >= amountOfPickups)
         {
             winTextObject.SetActive(true);
