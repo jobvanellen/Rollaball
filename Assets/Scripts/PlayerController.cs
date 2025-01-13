@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameObject restartButton; 
     public int amountOfPickups;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
         count = 0;
         SetCountText();
         winTextObject.SetActive(false);
+        restartButton.SetActive(false);
+
 
     }
 
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if (count >= amountOfPickups)
         {
             winTextObject.SetActive(true);
+            restartButton.SetActive(true);
             Destroy(GameObject.FindWithTag("Enemy"));
         }
     }
@@ -68,6 +72,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "Game Over!";
+            restartButton.SetActive(true);
         }
     }
 }
