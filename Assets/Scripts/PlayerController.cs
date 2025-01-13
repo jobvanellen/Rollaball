@@ -54,6 +54,17 @@ public class PlayerController : MonoBehaviour
         if (count >= amountOfPickups)
         {
             winTextObject.SetActive(true);
+            Destroy(GameObject.FindWithTag("Enemy"));
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            winTextObject.gameObject.SetActive(true);
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "Game Over!";
         }
     }
 }
