@@ -33,7 +33,7 @@ public class BallController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("targetX: " + targetX + " targetY: " + targetZ);
+        Debug.Log("targetX: " + targetX + " targetZ: " + targetZ);
         Debug.Log("rb.position.x: " + rb.position.x + " rb.position.z: " + rb.position.z);
         if (rb.position.x != targetX || rb.position.y != targetZ)
         {
